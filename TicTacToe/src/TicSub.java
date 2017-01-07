@@ -1,19 +1,19 @@
 
 /*
  * Debug status:-
- * - I found a bigger problem. The tree seems to have another branch,
- *   which is the reason there is always a element left in markTree
+ *  - Minor bugs yet to be fixed. Algorithm works and executes perfectly.
+ *  - Doesint check if the game is over.
  *   
  * Fixed status:-
  *  - oppchar() is perfect
  *  - whatChar() is perfect
  *  - isOver() is perfect
  *  - missingBoxes() is perfect
- *  - *tryAllPossibility() is persumed to be perfect
+ *  - tryAllPossibility() is perfect
  *  - markTree() is perfect
  *  - processBestMove() is perfect
- *  - *processRow is to be checked for the latest path bug
- *  - *pathMod() is persumed to be perfect
+ *  - processRow is perfect
+ *  - pathMod() is perfect
  *  - subArray() is perfect
  *  - mergeMissing() is perfect
  *  - swap() is perfect
@@ -238,7 +238,6 @@ public class TicSub
 		}
 
 		return 9;//The control should not come here. If it does, then 9 will cause it to crash
-		//paste 1 in last line
 
 	}//END OF tryAllPossibilities()
 
@@ -281,22 +280,7 @@ public class TicSub
 			{
 				System.out.println(pnum + "," + String.valueOf(realBoard));
 			}
-
-			/*if (headTrue == false)
-			{
-				nodeTreeFlag[0] = 1;
-				headTrue = true;
-			}*/
-			/*else if(pnum % 2 !=0)
-			{
-				nodeTreeFlag[elementFromPath(mpath, missing.length)] = 1;
-			}*/
-			/*if (test == true && (missing.length + 1 == mpath.length()))// && nodeTreeFlag[elementFromPath(mpath, missing.length)] == 0)
-			{
-				mark = elementFromPath(mpath, missing.length);
-				Thread.sleep(3000);
-				test = false;
-			}*/
+			
 			if (ch == compch)
 			{
 				//System.out.println(i + "," + pnum + "," + mpath + "," + elementFromPath(mpath, missing.length) + "true " + String.valueOf(realBoard));
@@ -458,8 +442,6 @@ public class TicSub
 		return board;
 	}//END OF mergeMissing()
 	
-	//returns the array element of the given path
-
 	//Swap 2 values of an array using call by reference
 	void swap(int a, int b, int ch[])
 	{
@@ -481,7 +463,6 @@ public class TicSub
 	}//END OF calcTotalNode()
 
 	//Returns the element from the path
-	
 	int elementFromPath(String path, int missingLength)
 	{
 		//System.out.println("efp:- " + path + " " + missingLength);
@@ -513,10 +494,7 @@ public class TicSub
 		return x + y;
 	}//END OF elementFromPath()
 	
-	//Returns the number of nodes present in the given row
-
 	//Retunrs the numbers of nodes in the given row from the tree
-	
 	int noOfNodesRow(int row, int missingLength)
 	{
 		int sum = 1;
@@ -530,5 +508,4 @@ public class TicSub
 		else
 			return sum;
 	}//END OF noOfNode()
-
 }//END OF CLASS TicSub
